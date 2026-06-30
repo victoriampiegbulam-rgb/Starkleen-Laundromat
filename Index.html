@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Starkleen Laundromat</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f8fb;
+color:#333;
+}
+
+header{
+background:#0066cc;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+header h1{
+font-size:42px;
+margin-bottom:10px;
+}
+
+header p{
+font-size:20px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 30px;
+margin-top:20px;
+background:#00b894;
+color:white;
+text-decoration:none;
+border-radius:30px;
+font-size:18px;
+}
+
+section{
+padding:50px 20px;
+max-width:1000px;
+margin:auto;
+}
+
+.services{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:20px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+form{
+background:white;
+padding:30px;
+border-radius:10px;
+box-shadow:0 5px 15px rgba(0,0,0,.1);
+}
+
+input,textarea{
+width:100%;
+padding:12px;
+margin:10px 0;
+border:1px solid #ccc;
+border-radius:5px;
+font-size:16px;
+}
+
+button{
+background:#0066cc;
+color:white;
+border:none;
+padding:15px;
+width:100%;
+font-size:18px;
+border-radius:5px;
+cursor:pointer;
+}
+
+footer{
+background:#222;
+color:white;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+</style>
+
+<script>
+function sendWhatsApp(){
+event.preventDefault();
+
+var name=document.getElementById("name").value;
+var phone=document.getElementById("phone").value;
+var address=document.getElementById("address").value;
+var items=document.getElementById("items").value;
+
+var message =
+"*NEW LAUNDRY REQUEST*%0A%0A"+
+"Name: "+name+"%0A"+
+"Phone: "+phone+"%0A"+
+"Pickup Address: "+address+"%0A"+
+"Laundry Details: "+items;
+
+window.open("https://wa.me/234XXXXXXXXXX?text="+message,"_blank");
+}
+</script>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>STARKLEEN LAUNDROMAT</h1>
+
+<p>Professional Laundry • Dry Cleaning • Pickup & Delivery</p>
+
+<a href="#order" class="btn">Book Laundry Pickup</a>
+
+</header>
+
+<section>
+
+<h2>Our Services</h2>
+
+<div class="services">
+
+<div class="card">
+<h3>Wash & Fold</h3>
+<p>Neatly washed, folded and packaged.</p>
+</div>
+
+<div class="card">
+<h3>Dry Cleaning</h3>
+<p>Professional care for suits, gowns and delicate fabrics.</p>
+</div>
+
+<div class="card">
+<h3>Ironing</h3>
+<p>Crisp, wrinkle-free finishing.</p>
+</div>
+
+<div class="card">
+<h3>Pickup & Delivery</h3>
+<p>Fast doorstep collection and delivery.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="order">
+
+<h2>Request Laundry Pickup</h2>
+
+<form onsubmit="sendWhatsApp()">
+
+<input
+type="text"
+id="name"
+placeholder="Full Name"
+required>
+
+<input
+type="tel"
+id="phone"
+placeholder="Phone Number"
+required>
+
+<input
+type="text"
+id="address"
+placeholder="Pickup Address"
+required>
+
+<textarea
+id="items"
+rows="6"
+placeholder="Describe your laundry (e.g. 5 shirts, 2 suits, 3 gowns...)"
+required></textarea>
+
+<button type="submit">
+Send Request via WhatsApp
+</button>
+
+</form>
+
+</section>
+
+<footer>
+
+<h3>Starkleen Laundromat</h3>
+
+<p>Professional Laundry Services</p>
+
+<p>📍 Ojodu Ikeja, Lagos State, Nigeria</p>
+
+<p>☎ 234 706 131 0974</p>
+
+<p>WhatsApp Available 24/7</p>
+
+</footer>
+
+</body>
+</html>
